@@ -1,0 +1,4 @@
+1. System.out.println---> System is the class, Out is the static field of system class and println is the method.
+2. main() method can be overloaded but can not be overriden because static method can not be overriden in java.
+3. Local variables stored in stack while instance variables stored in heap.
+4. Objects,arrays,strings,non primitive types stored in heap but there address stored in stack
