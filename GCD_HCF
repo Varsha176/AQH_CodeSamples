@@ -1,0 +1,112 @@
+*****************Brute Force Approach*************************
+algo -- 1) find the smaller number
+2) Iterate from last of smaller number till 1 (as 1 is the min gcd).
+2) check if both the number divisible by the number.(this is our gcd).
+
+public class GCD {
+	
+	public static int calculateGCD(int a,int b)
+	{
+		int min=0;
+		if(a>b)
+		{
+			min =b;
+		}
+		else
+		{
+			min =a;
+		}
+		for(int i=min;i>=1;i--)
+		{
+			if(a%i==0 && b%i==0)
+			{
+				return i;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+		return 1;}
+	
+	 public static void main(String[] args) {
+		 Scanner inp = new Scanner(System.in);
+		 int a = inp.nextInt();
+		 int b = inp.nextInt();
+		 System.out.println("GCD is: "+calculateGCD(a,b));
+		 }
+}
+
+
+*****************Euclid approach*************************
+Algo -- 1) find the larger number
+2) replace the larger number with the diff of the two numbers.
+3)repeat step 1& 2 untill both number equals.
+
+
+public class GCD {
+
+    public static int calculateGCD(int a, int b) {
+
+        while (a != b) {
+         if (a > b) {
+
+                a = a - b;
+
+            } else {
+
+                b = b - a;
+
+            }
+        }
+        return a;
+}
+
+  public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+
+        int a = inp.nextInt();
+        int b = inp.nextInt();
+        System.out.println("GCD is: " + calculateGCD(a, b)); }}
+
+
+*****************Enhanced Euclid approach*************************
+Just replace - operator with % in above approach.
+And termination condn is (a!=0 && b!=0)
+
+package test;
+
+import java.util.Scanner;
+
+public class GCD {
+	
+	public static int calculateGCD(int a,int b)
+	{
+		while(a!=0 && b!=0)
+		{
+			if(a>b)
+		{
+		a = a%b;
+		}
+		else
+		{
+			b= b%a;
+		}
+		}
+		if(a!=0)
+		{
+			return a;
+		}
+		else
+		{
+			return b;
+		}
+	}
+	
+	 public static void main(String[] args) {
+		 Scanner inp = new Scanner(System.in);
+		 int a = inp.nextInt();
+		 int b = inp.nextInt();
+		 System.out.println("GCD is: "+calculateGCD(a,b));
+		  }}
+
