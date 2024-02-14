@@ -15,3 +15,27 @@ package: import java. util.Arrays;
 5. To print multidimensional arrays Use Arrays.deepToString(arr).
 
 https://www.freecodecamp.org/news/java-interview-prep-handbook/
+
+
+*************** String Pointers ****************************
+1. The string pool is inside heap memory.
+2. java. lang.String class is used to create a string object.
+3. Immutability is required for security and synchronization(thread-safety).
+4. use equals() method to check value and (==) to check both value and reference.
+
+
+OBJECT CLASS :
+Object class is present in java.lang package. Every class in Java is directly or indirectly derived from the Object class.
+If a Class does not extend any other class then it is a direct child class of Object and if it extends another class then it is
+indirectly derived. Therefore the Object class methods are available to all Java classes. Hence, the Object class acts as
+a root of the inheritance hierarchy in any Java Program.
+
+There are methods in the Object class:
+toString(), hashCode(), equals(Object obj), getClass(), finalize(), clone(), etc.
+
+NUMBER CLASS :
+Most of the time, while working with numbers in java, we use primitive data types. But, Java also provides various
+numeric wrapper sub classes under the abstract class Number present in java.lang package.There are mainly six subclasses
+under the Number class. These sub-classes define some useful methods that are used frequently while dealing with numbers.
+Byte, Integer, Double, Short, Float, Long
+NOTE: Primitive Wrapper Classes are Immutable in Java.
