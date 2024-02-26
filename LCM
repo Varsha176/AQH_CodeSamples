@@ -1,0 +1,79 @@
+1.Find largest number.
+2. check if largest number divisible by both the numbers.
+
+********************************************************
+public class LCM {
+	
+	static int max;
+	public static int calculateLCM(int a,int b)
+	{
+		if(a>b)
+		{
+			max = a;	
+		}
+		else
+		{
+			max =b;
+		}
+		
+		while(true)
+		{
+			if(max%a==0 && max%b==0)
+			{
+				break;
+			}
+			max++;
+		}
+		return max;
+	}
+	
+	 public static void main(String[] args) {
+		 Scanner inp = new Scanner(System.in);
+		 int a = inp.nextInt();
+		 int b = inp.nextInt();
+		 System.out.println("LCM is: "+calculateLCM(a,b));
+		  }}
+
+******************************************************
+By HCF*LCM = a*b
+******************************************************
+public class LCM {
+	
+	static int max;
+	public static int calculateLCM(int a,int b)
+	{
+		return (a*b)/calculateGCD(a,b);
+	}
+	
+	public static int calculateGCD(int a,int b)
+	{
+		while(a!=0 && b!=0)
+		{
+			if(a>b)
+		{
+		a = a%b;
+		}
+		else
+		{
+			b= b%a;
+		}
+		}
+		if(a!=0)
+		{
+			return a;
+		}
+		else
+		{
+			return b;
+		}
+	}
+	
+	 public static void main(String[] args) {
+		 Scanner inp = new Scanner(System.in);
+		 int a = inp.nextInt();
+		 int b = inp.nextInt();
+		 System.out.println("LCM is: "+calculateLCM(a,b));
+		  }
+
+}
+
