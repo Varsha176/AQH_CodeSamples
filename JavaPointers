@@ -39,3 +39,7 @@ numeric wrapper sub classes under the abstract class Number present in java.lang
 under the Number class. These sub-classes define some useful methods that are used frequently while dealing with numbers.
 Byte, Integer, Double, Short, Float, Long
 NOTE: Primitive Wrapper Classes are Immutable in Java.
+
+
+********* Java sample prog using stream ******************
+https://blog.devgenius.io/java-8-coding-and-programming-interview-questions-and-answers-62512c44f062
