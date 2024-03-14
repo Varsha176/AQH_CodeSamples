@@ -1,0 +1,41 @@
+**************** Reverse a String ****************
+I/p --Try programiz pro
+O/p --orp zimargorp yrT
+
+class HelloWorld {
+    public static void main(String[] args) {
+        String str = "Try programiz pro";
+       
+       
+       for(int i=str.length()-1;i>=0;i--)
+       {
+           System.out.print(str.charAt(i));
+      }
+        
+    }
+}
+
+**************** Reverse words in a given String ****************
+I/p --Try programiz pro
+O/p --pro programiz Try
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+     {
+        String s[]
+            = "i like this program very much".split(" ");
+        String ans = "";
+        for (int i = s.length - 1; i >= 0; i--) {
+            ans += s[i] + " ";
+        }
+          System.out.println(ans);
+       
+    }
+        
+    }
+}
+
+************************
