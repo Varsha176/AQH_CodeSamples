@@ -112,3 +112,36 @@ https://www.youtube.com/watch?v=PTOb0ZdBv8s&list=PLU83Ru7iGtAvP1rqt65MCDSBPFCzUK
 
 the above logic can also be enahnced if marking only first unmarked number , do checkout above video.
 
+***************** Print all the divisers of a given number *************************
+optimized approach
+
+1. Loop from 1 to root(num).
+2. check if (num % I ==0)--print factors.
+3. divide (num/i) to print remaining factors.
+
+Logic --- for number 45 factors are [1,45,3,15,5,9] ---we dont need to loop till the 45, root of 45 is sufficient.
+second diviser can be obtained from the first diviser using second = num/first.
+
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int num =45;
+        int i=0;
+        for(i=1;i*i <=num;i++)
+        {
+            if(num % i==0)
+            {
+                System.out.println(i); //first diviser
+                if(i!=num/i)
+                {
+                   System.out.println(num/i);  //second diviser
+                }
+            }
+        }
+    }
+}
+
