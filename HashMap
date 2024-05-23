@@ -1,0 +1,31 @@
+************* Program to find the maximum value and key in the hashmap ***************
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+    public static void main(String[] args) {
+        // Creating a HashMap
+        HashMap<String, Integer> hashMap = new HashMap<>();
+
+        // Adding key-value pairs to the HashMap
+        hashMap.put("A", 10);
+        hashMap.put("B", 20);
+        hashMap.put("C", 70);
+        hashMap.put("D", 40);
+        hashMap.put("E", 50);
+
+        // Finding the maximum value in the HashMap and corresponding key
+        int maxValue = Integer.MIN_VALUE;
+        String maxKey = null;
+        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+            if (entry.getValue() > maxValue) {
+                maxValue = entry.getValue();
+                maxKey = entry.getKey();
+            }
+        }
+
+        // Printing the key and maximum value
+        System.out.println("Key with maximum value: " + maxKey);
+        System.out.println("Maximum value in the HashMap: " + maxValue);
+    }
+}
