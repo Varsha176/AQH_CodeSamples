@@ -39,3 +39,26 @@ class HelloWorld {
 }
 
 ************************
+I/p --Try  pro
+O/p --yrT orp
+
+Reverse String by preserving spaces
+class HelloWorld {
+    public static void main(String[] args) {
+        String str = "Varsha Aaab";
+        
+        String[] words = str.split(" ");
+        String reversedString = "";
+        
+        for (int i = 0; i < words.length; i++) {
+            String word = words[i];
+            for (int j = word.length() - 1; j >= 0; j--) {
+                reversedString += word.charAt(j);
+            }
+            reversedString += " ";
+        }
+        
+        System.out.println(reversedString);
+    }
+}
+
