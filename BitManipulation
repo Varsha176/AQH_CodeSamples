@@ -1,0 +1,40 @@
+** for bit on --always use OR
+** for bit off --always use AND
+
+always shift left number by a bit ( pos << 1)
+to flip ~(pos << 1)
+
+*****************************************************************************
+q-1 Program To Find The Position Of Right Most Set Bit 
+*****************************************************************************
+Algo-- take mask and perform and if result is zero then set bit is not found.
+      Left shift the mask by one pos and again perform and operation.
+do this until right most bit is found.
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    static int returnpos(int n){
+        
+        int mask =1;
+        int pos =0;
+        if(n==0){
+            return -1;
+        }
+        while((n&m)==0)
+        {
+            m=m<<1;
+            pos++;
+        }
+        return pos+1;
+        
+    }
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        System.out.println(returnpos(n));
+       
+    }
+}
+
