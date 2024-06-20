@@ -1,0 +1,66 @@
+// Java program for checking
+// balanced brackets
+import java.util.*;
+
+public class BalancedBrackets {
+
+	// function to check if brackets are balanced
+	static boolean areBracketsBalanced(String brackets)
+	{
+		// Using ArrayDeque is faster than using Stack class
+		Stack<Character> stack
+			= new Stack<Character>();
+
+		// Traversing the Expression
+		for (int i = 0; i < brackets.length(); i++) {
+			char opening = brackets.charAt(i);
+
+			if (opening == '(' || opening == '[' || opening == '{') {
+				// Push the element in the stack
+				stack.push(opening);
+				continue;
+			}
+
+			// If current character is not opening
+			// bracket, then it must be closing. So stack
+			// cannot be empty at this point.
+			if (stack.isEmpty())
+				return false;
+			char check;
+			switch (opening) {
+			case ')':
+				check = stack.pop();
+				if (check == '{' || check == '[')
+					return false;
+				break;
+
+			case '}':
+				check = stack.pop();
+				if (check == '(' || check == '[')
+					return false;
+				break;
+
+			case ']':
+				check = stack.pop();
+				if (check == '(' || check == '{')
+					return false;
+				break;
+			}
+		}
+
+		// Check Empty Stack
+		return (stack.isEmpty());
+	}
+
+	// Driver code
+	public static void main(String[] args)
+	{
+		String expr = "({]][[})";
+
+		// Function call
+		if (areBracketsBalanced(expr))
+			System.out.println("Balanced ");
+		else
+			System.out.println("Not Balanced ");
+	}
+}
