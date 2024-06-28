@@ -1,7 +1,81 @@
 1. System.out.println---> System is the class, Out is the static field of the system class and println() is the method.
 2. The main() method can be overloaded but can not be overridden because the static method can not be overridden in Java.
-3. Local variables are stored in the stack while instance variables are stored in the heap.
-4. Objects, arrays, strings, and non-primitive types are stored in the heap but their address are stored in the stack.
+3. Objects, arrays, strings, and non-primitive types are stored in the heap but their address are stored in the stack.
+
+************************* Memory Management ***************************************************************************
+
+1. Local variables are stored in the stack while instance variables are stored in the heap.
+2. Primitive data types are stored in the stack while non-primitive stored in Heap and their reference are stored in Stack memory.
+
+********************************************* Primitive vs Non Primitive ************************************************************
+
+Primitive datatypes do not have null as the default value ex byte, short, int, long, float, double, char, or boolean.
+The default value for the reference variable is null for ex array, string class, interface etc.
+
+********************************************* Static and initializer Block *********************************************
+
+Static blocks are executed by the JVM (Java Virtual Machine) before the main method. 
+static
+	{
+		System.out.println("Welcome to studytonight.com");
+		System.out.println("This is static block I");
+}
+the initializer Block is used to initialize instance data members. The initializer block is executed whenever an object is created.
+https://www.studytonight.com/java/static-and-initializer-block.php
+
+********************************************* Switch ************************************************************************************
+int, char, string and enum allowed.
+The switch argument can be a variable expression.A case label cannot be a variable or variable expression. It must be a constant expression.
+switch (x + 1) --valid
+case 2 + 1: --valid 
+case x + y: --invalid
+********************************************* Type Casting **********************************************************************************
+Casting is a process of changing one type value to another type.Two type of type casting:
+widening conversion(Implicit) and Narrowing conversion(Explicit)
+
+********************************************* Wrapper Class ***********************************************************************************
+
+A Wrapper class in Java is used to convert a primitive data type to an object and object to a primitive type.
+Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
+
+Autoboxing and Unboxing
+------------------------
+
+Autoboxing : The automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing. For example – conversion of int to Integer, long to Long, double to Double, etc. 
+Example:
+---------
+class Main {
+   public static void main(String[] args) {
+
+      ArrayList<Integer> list = new ArrayList<>();
+
+      //autoboxing
+      list.add(5);
+      list.add(6);
+
+      System.out.println("ArrayList: " + list);
+   }
+}
+
+Unboxing: Automatically converting an object of a wrapper class to its corresponding primitive type is known as unboxing. For example – conversion of Integer to int, Long to long, Double to double, etc. 
+Example:
+--------
+class Main {
+   public static void main(String[] args) {
+
+      ArrayList<Integer> list = new ArrayList<>();
+
+      //autoboxing
+      list.add(5);
+      list.add(6);
+
+      System.out.println("ArrayList: " + list);
+
+      // unboxing
+      int a = list.get(0);
+      System.out.println("Value at index 0: " + a);
+   }
+}
 
 *************** Array Pointers ****************************
 Arrays Class
