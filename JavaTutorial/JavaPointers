@@ -1,11 +1,12 @@
 1. System.out.println---> System is the class, Out is the static field of the system class and println() is the method.
-2. The main() method can be overloaded but can not be overridden because the static method can not be overridden in Java.
+2. The main() method can be overloaded but not overridden because the static method can not be overridden in Java.
 3. Objects, arrays, strings, and non-primitive types are stored in the heap but their address are stored in the stack.
 
 ************************* Memory Management ***************************************************************************
 
 1. Local variables are stored in the stack while instance variables are stored in the heap.
-2. Primitive data types are stored in the stack while non-primitive ex object stored in Heap and their reference/ref variable are stored in Stack memory.
+2. Primitive data types are stored in the stack while non-primitive ex-objects are stored in Heap and their reference/ref variable are stored in Stack memory.
+3. Every Method creates its own stack.
 
 ********************************************* Primitive vs Non Primitive ************************************************************
 
@@ -65,6 +66,7 @@ public class HelloWorld {
     }
 }
 ********************************************* Type Casting **********************************************************************************
+
 Casting is a process of changing one type value to another type.Two type of type casting:
 widening conversion(Implicit) and Narrowing conversion(Explicit)
 
@@ -112,28 +114,9 @@ class Main {
    }
 }
 
-*************** Array Pointers ****************************
-Arrays Class
--------------
-package: import java. util.Arrays;
-
-1. To sort use Arrays.sort(arr) --this method internally uses the quicksort algorithm. To sort characters it uses unicode values.
-2. To sort some parts of an array use Arrays.sort(arr,from index,to index)
-3. To compare arrays use Arrays.equals(arr1,arr2)
-4. To print Arrays without using for loop we can use Arrays.toString(arr).
-5. To print multidimensional arrays Use Arrays.deepToString(arr).
-
-https://www.freecodecamp.org/news/java-interview-prep-handbook/
-
-
-*************** String Pointers ****************************
-1. The string pool is inside heap memory.
-2. java. lang.String class is used to create a string object.
-3. Immutability is required for security and synchronization(thread-safety).
-4. use equals() method to check value and (==) to check both value and reference.
-
 
 OBJECT CLASS :
+********************************************************
 Object class is present in java.lang package. Every class in Java is directly or indirectly derived from the Object class.
 If a Class does not extend any other class then it is a direct child class of Object and if it extends another class then it is
 indirectly derived. Therefore the Object class methods are available to all Java classes. Hence, the Object class acts as
@@ -143,6 +126,7 @@ There are methods in the Object class:
 toString(), hashCode(), equals(Object obj), getClass(), finalize(), clone(), etc.
 
 NUMBER CLASS :
+********************************************************
 Most of the time, while working with numbers in java, we use primitive data types. But, Java also provides various
 numeric wrapper sub classes under the abstract class Number present in java.lang package.There are mainly six subclasses
 under the Number class. These sub-classes define some useful methods that are used frequently while dealing with numbers.
