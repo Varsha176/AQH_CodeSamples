@@ -12,8 +12,34 @@ package: import java. util.Arrays;
 https://www.freecodecamp.org/news/java-interview-prep-handbook/
 
 
-*************** String Pointers ****************************
-1. The string pool is inside heap memory.
-2. java. lang.String class is used to create a string object.
-3. Immutability is required for security and synchronization(thread-safety).
-4. use equals() method to check value and (==) to check both value and reference.
+****************************** String Pointers **********************************************************  
+
+1. The string pool is inside heap memory. Two ways to create a string --1(Using literal), 2-- Using New Keyword.
+2. Each time we create a String literal, the JVM checks the string pool first. If the string literal already exists in the pool, a reference to the pool instance is returned.
+   If a string does not exist in the pool, a new string object is created and placed in the pool.
+When we create a String using a new keyword it creates an object in the non-string pool area of the heap.
+3. java. lang.String class is used to create a string object.
+4. Immutability is required for security and synchronization(thread safety).
+5. use equals() method to check value and (==) to check both value and reference.compareTo() to check if string are (>,=,<)
+
+********************************************************** String class methods **********************************************************  
+
+** StringBuffer & StringBuilder uses heap memory to store objects.
+
+
+1. indexOf(char),indexOf(char,position), indexOf(substring), indexOf(substring,position)
+2. replace(original,new)
+3. substring(int begin, int end),substring(int begin)
+4. contains()
+5. endsWith()
+6. isEmpty() 
+7. startsWith()
+
+___________ StringBuffer class Methods ___________
+1. append()
+2. insert(int index, String str), insert(int index, int num), insert(int index, obj)
+3. reverse()
+4. replace(int index, end index, string)
+
+
+
