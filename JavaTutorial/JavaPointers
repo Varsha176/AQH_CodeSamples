@@ -5,7 +5,7 @@
 ************************* Memory Management ***************************************************************************
 
 1. Local variables are stored in the stack while instance variables are stored in the heap.
-2. Primitive data types are stored in the stack while non-primitive stored in Heap and their reference are stored in Stack memory.
+2. Primitive data types are stored in the stack while non-primitive ex object stored in Heap and their reference/ref variable are stored in Stack memory.
 
 ********************************************* Primitive vs Non Primitive ************************************************************
 
