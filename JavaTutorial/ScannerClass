@@ -1,0 +1,26 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Read input from the user
+        String inp = sc.nextLine();
+        System.out.println("Input: " + inp);  // Print the input
+        
+        // Create a new Scanner object with the input string
+        Scanner scanner = new Scanner(inp);
+        
+        // Use the findInLine method to find "hello" in the input
+        boolean containsHello = scanner.findInLine("hello") != null;
+        
+        // Print the result
+        System.out.println("Contains 'hello': " + containsHello);
+        
+        // Close the scanners
+        sc.close();
+        scanner.close();
+    }
+}
