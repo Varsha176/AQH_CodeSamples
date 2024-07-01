@@ -114,6 +114,12 @@ class Main {
    }
 }
 
+******************************************************** For Each Loop ****************************************************************************************************************
+
+1. For-each loop is not appropriate when you want to modify the array:
+2. For-Each loop do not keep track of the index.
+3. For-each only iterates forward over the array in single steps.
+4. 
 
 OBJECT CLASS :
 ********************************************************
@@ -127,8 +133,8 @@ toString(), hashCode(), equals(Object obj), getClass(), finalize(), clone(), etc
 
 NUMBER CLASS :
 ********************************************************
-Most of the time, while working with numbers in java, we use primitive data types. But, Java also provides various
-numeric wrapper sub classes under the abstract class Number present in java.lang package.There are mainly six subclasses
+Most of the time, while working with numbers in Java, we use primitive data types. But, Java also provides various
+numeric wrapper subclasses under the abstract class Number present in java.lang package. There are mainly six subclasses
 under the Number class. These sub-classes define some useful methods that are used frequently while dealing with numbers.
 Byte, Integer, Double, Short, Float, Long
 NOTE: Primitive Wrapper Classes are Immutable in Java.
