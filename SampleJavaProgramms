@@ -66,6 +66,7 @@ class HelloWorld {
     }
 }
 **************Prime number from 1 to n ***********
+
 using Seive algorithm
 
 1. Create boolean array of 1 size extra and mark all numbers as false/unmarked initially.
@@ -110,16 +111,16 @@ public class prime {
 }
 https://www.youtube.com/watch?v=PTOb0ZdBv8s&list=PLU83Ru7iGtAvP1rqt65MCDSBPFCzUKGXG&index=14
 
-the above logic can also be enahnced if marking only first unmarked number , do checkout above video.
+the above logic can also be enhanced if marking only the first unmarked number, do check the above video.
 
-***************** Print all the divisers of a given number *************************
+***************** Print all the divisors of a given number *************************
 optimized approach
 
 1. Loop from 1 to root(num).
 2. check if (num % I ==0)--print factors.
-3. divide (num/i) to print remaining factors.
+3. divide (num/i) to print the remaining factors.
 
-Logic --- for number 45 factors are [1,45,3,15,5,9] ---we dont need to loop till the 45, root of 45 is sufficient.
+Logic --- for number 45 factors are [1,45,3,15,5,9] ---we don't need to loop till the 45, root of 45 is sufficient.
 second diviser can be obtained from the first diviser using second = num/first.
 
 
@@ -144,4 +145,59 @@ class HelloWorld {
         }
     }
 }
+*************************** Calculate Armstrong number *********************************
+import java.util.Scanner;
 
+public class Demo {
+    public static void main(String[] args) {
+        
+        int rem, sum;
+        
+        for (int i = 100; i <= 500; i++) {
+            int originalNum = i;
+            sum = 0;
+            int num = i;
+            
+            while (num != 0) {
+                rem = num % 10;
+                sum = sum + rem * rem * rem;
+                num = num / 10;
+            }
+            
+            if (sum == originalNum) {
+                System.out.println(i + " is an Armstrong number");
+            }
+        }
+    }
+}
+*********************** Check Neon number ***********************************
+ip-9 (Neon number == 9*9=81, 8+1=9)
+op --yes
+
+import java.util.Scanner;
+
+class NeonNumber {
+    public static void main(String[] args) {
+        
+        int num = 9;
+
+        // Step 1: Square the number
+        int square = num * num;
+
+        // Step 2: Calculate the sum of the digits
+        int sum = 0;
+        int temp = square;
+        while (temp != 0) {
+            int rem = temp % 10;
+            sum += rem;
+            temp = temp/10;
+        }
+
+        // Step 3: Check if it is a Neon Number
+        if (sum == num) {
+            System.out.println(num + " is a Neon Number.");
+        } else {
+            System.out.println(num + " is not a Neon Number.");
+        }
+    }
+}
