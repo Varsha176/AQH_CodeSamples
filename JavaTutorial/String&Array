@@ -39,11 +39,15 @@ When we create a String using a new keyword it creates an object in the non-stri
 10. repeat(int count)
 11. 
 
-___________ StringBuffer class Methods ___________
+___________ StringBuffer/StringBuilder class Methods ___________
 1. append()
 2. insert(int index, String str), insert(int index, int num), insert(int index, obj)
 3. reverse()
 4. replace(int index, end index, string)
+5. setCharAt(index, ch)
+
+
+
 
 
 
