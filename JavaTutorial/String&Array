@@ -34,6 +34,10 @@ When we create a String using a new keyword it creates an object in the non-stri
 5. endsWith()
 6. isEmpty() 
 7. startsWith()
+8. matches(String regex)
+9. split(String regex)
+10. repeat(int count)
+11. 
 
 ___________ StringBuffer class Methods ___________
 1. append()
