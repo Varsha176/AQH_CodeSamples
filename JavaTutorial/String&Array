@@ -47,7 +47,8 @@ ___________ StringBuffer/StringBuilder class Methods ___________
 5. setCharAt(index, ch)
 
 
-
+To make only first character of string as upper case use substring method: example -hello java --Hello Java
+string.substring(0,1).toUpperCase()+string.Substring(1); //lastindex not included in substring function.
 
 
 
