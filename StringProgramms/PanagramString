@@ -1,0 +1,28 @@
+// WAP to check if string is Panagram or not?
+A string is Panagram if it contains all 26 alphabets.
+Logic: add unique characters of string in Hashset and check size.
+***************************************************************
+import java.util.HashSet;
+
+class PanagramChecking {
+    public static void main(String[] args) {
+        String input = "Bawds jog, flick quartz, vey nymph";
+        HashSet<Character> hs = new HashSet<Character>();
+
+       
+
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                hs.add(Character.toLowerCase(c)); // to avoid case-sensitivity issues
+            }
+        }
+
+        System.out.println("Unique alphabetic characters: " + hs.size());
+        if (hs.size() == 26) {
+            System.out.println("The input string is a pangram.");
+        } else {
+            System.out.println("The input string is not a pangram.");
+        }
+    }
+}
