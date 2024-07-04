@@ -1,4 +1,4 @@
-Problem : Given an array of N strings, find the longest common prefix among all strings present in the array.
+Problem: Given an array of N strings, find the longest common prefix among all strings present in the array.
 arr[] = {geeksforgeeks, geeks, geek,geezer}
 Output: gee
 Logic: First Sort the Array. Then compare first and last string and return the common prefix.
@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class LongestCommonPrefix {
 
-  public String longestCommonPrefix(String[] strs) {
+  public static String longestCommonPrefix(String[] strs) {
 
     StringBuilder result = new StringBuilder();
 
@@ -28,5 +28,9 @@ public class LongestCommonPrefix {
 
     return result.toString();
   }
+   public static void main(String[] args) {
+        String[] strs = {"avenge","avengers","avent","avb"};
+        System.out.println(longestCommonPrefix(strs));  
+    }
 
 }
