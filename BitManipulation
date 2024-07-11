@@ -7,7 +7,7 @@ to flip ~(pos << 1)
 *****************************************************************************
 q-1 Program To Find The Position Of Right Most Set Bit 
 *****************************************************************************
-Algo-- take mask and perform and if result is zero then set bit is not found.
+Algo-- take mask and perform and operation, if result is zero then set bit is not found.
       Left shift the mask by one pos and again perform and operation.
 do this until right most bit is found.
 
@@ -60,4 +60,65 @@ class HelloWorld {
         }
         
     }
-
+********************************************************************
+WAP to find out the no of bits to be flipped from converting one integer to another
+lOGIC-- pERFORM XOR of both the numbers and then count the no of set bits.
+********************************************************************
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        System.out.println(countFlipped(num1,num2));
+    }
+    public static int countFlipped(int num1,int num2)
+    {
+        int n = num1^num2;
+        int count =0;
+        System.out.println(n);
+        while(n!=0)
+        {
+            n= n & (n-1);
+            count++;
+        }
+        return count;
+        
+    }
+}
+*************************************************************************
+WAP to count the no of set bits (no of 1's)
+Logic-- check (n&(n-1)) and inc the counter
+n & (n-1) results in the last bit flipped of n
+*************************************************************************
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+     
+        System.out.println(countFlipped(num1));
+    }
+    public static int countFlipped(int n)
+    {
+        
+        int count =0;
+       
+        while(n!=0)
+        {
+            n= n & (n-1);
+            count++;
+        }
+        return count;
+        
+    }
+}
+*************************************************************************
+WAP to check if given number is power of 4?
+Logic--Given number is power of 4 if the number is power of 2 and if divided by 3 reminder is 1
+logic --((n & (n - 1)) == 0) && (n % 3 == 1);
+*************************************************************************
