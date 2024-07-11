@@ -1,13 +1,18 @@
 *************** Array Pointers ****************************
 Arrays Class
 -------------
-package: import java. util.Arrays;
+package: import java.util.Arrays;
 
 1. To sort use Arrays.sort(arr) --this method internally uses the quicksort algorithm. To sort characters it uses unicode values.
 2. To sort some parts of an array use Arrays.sort(arr,from index,to index)
 3. To compare arrays use Arrays.equals(arr1,arr2)
 4. To print Arrays without using for loop we can use Arrays.toString(arr).
 5. To print multidimensional arrays Use Arrays.deepToString(arr).
+6. To get the pos of the element using binary search algo use Arrays.binarySearch(intArr, int Key)
+7. To COPY Array uses Arrays.copyOf(original array, new length), Arrays.copyOfRange(intArr, startIndex, lastIndex)
+8. To compare Arrays.equals(intArr, intArr1)
+9. Array.clone() to create/clone temo array.
+
 
 https://www.freecodecamp.org/news/java-interview-prep-handbook/
 
