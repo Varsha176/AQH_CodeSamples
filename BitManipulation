@@ -150,3 +150,25 @@ Q - WAP to swap all even and odd bits.
 Logic -- Perform AND operation between num and (0xAAAAAAAA). Then perform (&) operation between (0x55555555). Finally, combine the above 2 results using OR operation.
 _TimeComplexity -O(1)_____________________________________________________________________________________________________________________________________
 https://www.youtube.com/watch?v=tNMgJpDMUNs&list=PLU83Ru7iGtAvP1rqt65MCDSBPFCzUKGXG&index=26
+**********************************************************************************************************************************************************
+Q- Count the number of trailing zeros in a binary
+Logic - perform n & (n-1) to give the rightmost set bit, then perform XOR operation between the result and number and use log() to return the power of 2.
+**********************************************************************************************************************************************************
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        System.out.println(trailingZeroes(num));
+    }
+
+    public static int trailingZeroes(int n) {
+      n = ((n & (n-1)) ^ n) ;
+      
+     return (int)(Math.log10(n)/Math.log10(2));
+    }
+}
+*****************************************************
+Reverse bits of an Integer
+https://www.youtube.com/watch?v=sDMDVIAW78s&list=PLU83Ru7iGtAvP1rqt65MCDSBPFCzUKGXG&index=28
+
