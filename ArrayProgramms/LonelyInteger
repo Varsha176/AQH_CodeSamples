@@ -1,0 +1,89 @@
+***************** Find Lonely integer in an ARRAY ********************************
+                             Or
+***************** Find value that occurs in odd number of elements ***************
+1: Using Two pointer approach
+*****************************************************************************************************
+
+public class OddOccurenceArray {
+	
+	public static void main(String[] args) {
+        int [] number = {1,9,3,9,3,9,7,9,7,1,2};  // You can change this number to test with different inputs
+        findOddNumber(number);
+    }
+	public static void findOddNumber(int number []) {
+		
+		int left = 0,right=number.length-1;
+		while(left<right)
+		{
+			if(number[left]==number[right])
+			{
+				left++;
+				right--;
+			}
+			else
+			{
+				left++;
+			}}
+        System.out.println("The odd element is "+number[right]);
+}}
+
+*********************************************************************
+2: using Set operator (time complexity reduced but space complexity inc)
+*********************************************************************
+import java.util.HashSet;
+class HelloWorld {
+    public static void main(String[] args) {
+        int arr[]= {1,2,3,4,4,3,2,1,0,0};
+        lonelyInteger(arr);
+    }
+    public static int lonelyInteger(int n[])
+    {
+        
+       HashSet<Integer> hs = new HashSet<Integer>();
+       for(int i:n)
+       {
+           if(hs.contains(i))
+           {
+               hs.remove(i);
+           }
+           else
+           {
+               hs.add(i);
+           }
+       }
+         if(hs.size()!=0)
+            {
+        for(int i:hs)
+        {
+           System.out.println("Lonely Integer is:"+i);
+                    
+        }}
+            else
+            {
+                System.out.println("No Lonely Integer availabe");
+            }
+             return -1;
+        } }
+******************************************************************************************************************************************
+3rd: By Using xor operator (time and space complexity both reduced)
+XOR-- If we perfrom XOR operation with number itself then output is always 0. Example -- 5 XOR 5 =0 
+      If we perfrom XOR operation of number with Zero then output will be number itself. Example -- 5 XOR 0 =5
+So if there are pair in XOR then they will cancel itself and only lonely integer will left.Example --(5 ^5^6)=6
+******************************************************************************************************************************************
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int arr[]= {1,2,3,4,3,2,1};
+        System.out.println(lonelyInteger(arr));
+    }
+    public static int lonelyInteger(int n[])
+    {
+        int result=0;
+      for(int i: n)
+      {
+          result = result ^ i; 
+      }
+      return result;
+       
+    }
+}
