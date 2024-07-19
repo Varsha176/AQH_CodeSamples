@@ -1,0 +1,32 @@
+1. WAP to calculate binary Gap(Find longest sequence of zeros in binary representation of an integer.) 
+I/P-1001 , O/P-- 2
+I/P-1000010001, O/P--4
+*********************************************************************************************************
+package test;
+public class BinaryGap {
+public static void main(String[] args) {
+	        int number = 34;  // You can change this number to test with different inputs
+	        int longestSequence = findLongestZeroSequence(number);
+	        System.out.println("The longest sequence of zeros in the binary representation of " + number + " is: " + longestSequence);
+	    }
+ public static int findLongestZeroSequence(int number) {
+	        String binaryString = Integer.toBinaryString(number);
+	        System.out.println("Binary representation: " + binaryString);  // For debugging purposes
+
+	        int maxZeros = 0;
+	        int currentZeros = 0;
+
+	        for (int i = 0; i < binaryString.length(); i++) {
+	            if (binaryString.charAt(i) == '1') {
+	                // Update maxZeros if currentZeros is greater
+	                if (currentZeros > maxZeros) {
+	                    maxZeros = currentZeros;
+	                }
+	                // Reset currentZeros for the next sequence of zeros
+	                currentZeros = 0;
+	            } else {
+	                // Increment currentZeros for each '0'
+	                currentZeros++;
+	            }}
+     return maxZeros;
+	    }}
