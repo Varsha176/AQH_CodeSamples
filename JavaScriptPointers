@@ -1,0 +1,26 @@
+1. Difference between var and let keywords?
+
+ans: We can not re-declare a variable with the let keyword but re-declaration is possible with the let keyword.Reassign is allowed for both let and var
+example of re-declaration: var a =10
+         var a =20  (valid)
+
+let a=10
+let a =20 (error, can not redeclare block level variable)
+
+var a =10
+console.log(a)
+let  a =10
+console.log(a) (Identifier 'a' has already been declared)
+
+Example of reassigning
+let a =10
+console.log(a)
+  a =12
+console.log(a) (valid)
+
+2. How do you identify the data type of a variable?
+use typeof()
+console.log(typeof(a))
+
+3. How many types of data are available in Javascript?
+What is hoisting in JavaScript?
