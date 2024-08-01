@@ -53,6 +53,9 @@ array.slice(start,end)
 ********************************************************
 array1.concat(array2)
 
+array.reverse() --to reverse the array
+array.sort() -- to sort the array lexicographically
+
 array.indexof(value) --returns the first index of value in array if present else return false
 
 9. filter and reduce in javaScript
@@ -95,3 +98,19 @@ let sum=a.reduce(
 )
 console.log(sum)
 here total is the accumulator (the variable where we want the end result and e is the index of the array)
+
+
+_________________________________________________________________________
+Different ways of writing functions in JavaScript
+__________________________________________________________________________
+1. Simple function declaration
+2. Function expression or an anonymous function
+-------------------------
+const add = function (a, b) {
+    console.log(a + b);
+}
+add(2, 3);
+
+3. Array functions
+let add = (a, b) => a + b;
+console.log(add(3, 2));
