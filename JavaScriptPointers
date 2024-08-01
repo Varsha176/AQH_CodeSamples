@@ -1,6 +1,7 @@
-1. Difference between var and let keywords?
+1. What is the difference between var and let keywords?
+********************************************************
 
-ans: We can not re-declare a variable with the let keyword but re-declaration is possible with the let keyword.Reassign is allowed for both let and var
+ans: We can not re-declare a variable with the let keyword but re-declaration is possible with the let keyword. Reassign is allowed for both let and var
 example of re-declaration: var a =10
          var a =20  (valid)
 
@@ -19,8 +20,78 @@ console.log(a)
 console.log(a) (valid)
 
 2. How do you identify the data type of a variable?
+********************************************************
 use typeof()
 console.log(typeof(a))
 
 3. How many types of data are available in Javascript?
 What is hoisting in JavaScript?
+
+4. Array declaration in JavaScript
+********************************************************
+let marks = Array(6)
+let marks =[]
+let scores = new Array(10,20,30,40)
+let score = [40.1,30]
+
+5. Insert and delete elements in Array
+********************************************************
+marks.push(35) -- insert in the last
+marks.unshift(12) -- adds in the beginning
+marks.shift() --removes and returns first element of the Array
+marks.pop() --delete last element of the array
+
+6. Check element is present in array or not.
+********************************************************
+marks.include(number)
+
+7. Slice up the array
+********************************************************
+array.slice(start,end)
+
+8. Concat the Array
+********************************************************
+array1.concat(array2)
+
+array.indexof(value) --returns the first index of value in array if present else return false
+
+9. filter and reduce in javaScript
+********************************************************
+The filter() method creates a new array filled with elements that pass a test provided by a function.
+
+The filter() method does not execute the function for empty elements.
+
+The filter() method does not change the original array.
+Example_1:
+________________
+let a =[10,20,3]
+let even=a.filter(
+    (e)=>{
+        return e%2 ===0
+    }
+)
+console.log(even)
+
+Example_2:
+______________
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+Reduce method
+**************
+arr.reduce(callback, initialValue);
+The reduce() method returns a single value: the function's accumulated result
+Example: Sum of array Elements
+_______________________________
+let a =[10,20,3]
+let sum=a.reduce(
+    (total,e)=>{
+        return total+e
+    },0
+)
+console.log(sum)
+here total is the accumulator (the variable where we want the end result and e is the index of the array)
