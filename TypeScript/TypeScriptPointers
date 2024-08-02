@@ -66,3 +66,5 @@ let hello = (a:number,b:number)=>{
 }
 hello(10,6)
 --------------------------------------
+
+12: In TS Functional overloading is supported, but the number of parameters should be the same unlike Java. JS does not support method overloading.
