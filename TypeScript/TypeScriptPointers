@@ -1,0 +1,68 @@
+1: Difference between JS and TS?
+TS is statically typed lang while JS is Dynamically typed.it is basically superset of JavaScript. TypeScript compiler internally convert ts code
+into js code which will then execute on browser/device or OS.
+
+2: Disadvantage of TS
+Takes more time to compile the code.
+
+3: What is type annoation
+when we explicitly define the type of variable its known as type annotaion:
+eX: let numbeone:number =30
+
+4: what is type interference
+when we explicitly dont define the type of variable, and its interfed at compile time by compiler its known as type interference:
+
+5: Datatypes in TS
+number,string,boolean, null, undefined,void,any(if data type is unknown)
+
+6: Array declaration
+let emp:number[]=[1,2,3]
+let empsname:Array<String> =["R","M"]
+let details: Array<String|number> =["ramesh",11,"mahesh"]
+let moredetails: Array<any> =["ramesh",11,"mahesh"]
+
+7: What is Tuple?
+Tuple is in fixed size and order matters
+let mytuple:[number,String] =[100,"asp"]  //normal tuple
+
+let mytuple:[number,String][] =[[100,"asp"],[200,"text"]] //tuple with arrays
+
+
+8: Enum:: hold the set of constants (number,string & hetrogenious)
+enum Status{
+    Active=1,
+   PENDING="yes"}
+
+9: let mynumber:void =undefined  --- is possible
+
+10: What is Type assertions in TypeScript?
+When we want to change a variable from one type to another such as any to number etc, we use Type assertion.
+Ex:
+let num: any = 77; 
+let num1 = <Number> num; 
+
+Ex2:
+let str: unknown = "geeksforgeeks"; 
+console.log(str); 
+  
+let len: number = (str as string).length; 
+console.log(len);
+
+11. Functions
+1- Name functions
+2- Anonymous functions
+--------------------------------------
+let value = function(a:String,b:String)
+{
+    console.log("my name is:"+a+":"+b)
+}
+value("text","editor")
+------------------------------------
+
+3- Arrow functions
+--------------------------------------
+let hello = (a:number,b:number)=>{
+    console.log(a-b)
+}
+hello(10,6)
+--------------------------------------
