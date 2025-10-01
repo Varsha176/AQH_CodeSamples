@@ -2,16 +2,6 @@
 2. The main() method can be overloaded but not overridden because the static method can not be overridden in Java.
 3. Objects, arrays, strings, and non-primitive types are stored in the heap but their address are stored in the stack.
 
-************************* Memory Management ***************************************************************************
-
-1. Local variables are stored in the stack while instance variables are stored in the heap.
-2. Primitive data types are stored in the stack while non-primitive ex-objects are stored in Heap and their reference/ref variable are stored in Stack memory.
-3. Every Method creates its own stack.
-
-********************************************* Primitive vs Non Primitive ************************************************************
-
-Primitive datatypes do not have null as the default value ex byte, short, int, long, float, double, char, or boolean.
-The default value for the reference variable is null for ex array, string class, interface etc.
 
 ********************************************* Static and initializer Block *********************************************
 
