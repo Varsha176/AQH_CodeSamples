@@ -30,3 +30,9 @@ public class MemoryExample {
 | **Thread Safety** | Thread-specific                           | Shared across threads                         |
 | **Size**          | Smaller (limited)                         | Larger (but finite, controlled by JVM `-Xmx`) |
 | **Errors**        | StackOverflowError (deep recursion)       | OutOfMemoryError (heap full)                  |
+
+
+********************************************* Primitive vs Non Primitive ************************************************************
+
+Primitive datatypes do not have null as the default value ex byte, short, int, long, float, double, char, or boolean.
+The default value for the reference variable is null for ex array, string class, interface etc.
