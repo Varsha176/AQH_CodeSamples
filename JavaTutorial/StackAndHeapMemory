@@ -1,0 +1,32 @@
+public class MemoryExample {
+
+    int instanceVar = 10; // Stored in heap (as part of the object)
+
+    public void method() {
+        int localVar = 5; // Stored in stack (method's frame)
+        
+        Integer obj = new Integer(20); // "obj" reference is in stack
+                                       // actual Integer(20) object is in heap
+
+        System.out.println(localVar);
+        System.out.println(obj);
+    }
+
+    public static void main(String[] args) {
+        MemoryExample example = new MemoryExample();
+        example.method();
+    }
+}
+
+1. Local variables are stored in the stack while instance variables are stored in the heap.
+2. Primitive data types are stored in the stack while non-primitive ex-objects are stored in Heap and their reference/ref variable are stored in Stack memory.
+3. Every Method creates its own stack.
+
+| Feature           | Stack Memory                              | Heap Memory                                   |
+| ----------------- | ----------------------------------------- | --------------------------------------------- |
+| **Storage**       | Method calls, local variables, references | Objects and class-level variables             |
+| **Access Speed**  | Fast                                      | Slower                                        |
+| **Lifecycle**     | Cleared when method exits                 | Lives until GC removes it                     |
+| **Thread Safety** | Thread-specific                           | Shared across threads                         |
+| **Size**          | Smaller (limited)                         | Larger (but finite, controlled by JVM `-Xmx`) |
+| **Errors**        | StackOverflowError (deep recursion)       | OutOfMemoryError (heap full)                  |
