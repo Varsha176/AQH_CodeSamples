@@ -1,19 +1,3 @@
-1. System.out.println---> System is the class, Out is the static field of the system class and println() is the method.
-2. The main() method can be overloaded but not overridden because the static method can not be overridden in Java.
-3. Objects, arrays, strings, and non-primitive types are stored in the heap but their address are stored in the stack.
-
-
-********************************************* Static and initializer Block *********************************************
-
-Static blocks are executed by the JVM (Java Virtual Machine) before the main method. 
-static
-	{
-		System.out.println("Welcome to studytonight.com");
-		System.out.println("This is static block I");
-}
-the initializer Block is used to initialize instance data members. The initializer block is executed whenever an object is created.
-https://www.studytonight.com/java/static-and-initializer-block.php
-
 ********************************************* Switch ************************************************************************************
 int, char, string and enum allowed.
 The switch argument can be a variable expression.A case label cannot be a variable or variable expression. It must be a constant expression.
@@ -103,13 +87,6 @@ class Main {
       System.out.println("Value at index 0: " + a);
    }
 }
-
-******************************************************** For Each Loop ****************************************************************************************************************
-
-1. For-each loop is not appropriate when you want to modify the array:
-2. For-Each loop do not keep track of the index.
-3. For-each only iterates forward over the array in single steps.
-4. 
 
 OBJECT CLASS :
 ********************************************************
