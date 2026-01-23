@@ -1,0 +1,18 @@
+import java.util.HashMap;
+
+public class WordCountExample {
+    public static void main(String[] args) {
+        String text = "apple banana apple orange banana apple";
+        String[] words = text.split(" ");
+        HashMap<String, Integer> wordCount = new HashMap<>();
+
+        for (String word : words) {
+            // Get the current count of the word, or 0 if not present, then add 1
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
+        System.out.println(wordCount);
+        // Output: {apple=3, banana=2, orange=1}
+    }
+}
+
+In this example, getOrDefault(word, 0) ensures that if a word is encountered for the first time, 0 is used as its initial count, which is then incremented to 1
