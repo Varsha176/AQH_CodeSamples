@@ -1,0 +1,86 @@
+1. simple Java program to reverse every alternate word in the string while preserving spaces and word order.
+i/p: "i am a qa engineer"
+o/p: "i ma a aq engineer"
+
+public class ReverseAlternateWords {
+
+    public static void main(String[] args) {
+        String s = "i am a qa engineer";
+        String result = reverseAlternateWords(s);
+        System.out.println("Original: " + s);
+        System.out.println("Output  : " + result);
+    }
+
+    public static String reverseAlternateWords(String str) {
+        String[] words = str.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            // Reverse alternate words (2nd, 4th, etc.)
+            if (i % 2 == 1) {
+                result.append(new StringBuilder(words[i]).reverse());
+            } else {
+                result.append(words[i]);
+            }
+
+            // Add space except after last word
+            if (i < words.length - 1) {
+                result.append(" ");
+            }
+        }
+
+        return result.toString();
+    }
+}
+
+Q:2 --  WAP sum of the least numbers from the array, and numbers can be duplicate.
+arr[] = {3, 5, 2, 3, 7, 2}
+op- 4
+
+import java.util.Arrays;
+
+public class SumOfLeastNumbers {
+    public static void main(String[] args) {
+
+        int[] arr = {3, 5, 2, 3, 7, 2};
+
+        // Sort the array
+        Arrays.sort(arr);
+
+        // Sum of two smallest numbers
+        int sum = arr[0] + arr[1];
+
+        System.out.println("Sum of least numbers: " + sum);
+    }
+}
+
+without sorting
+public class SumOfLeastNumbers {
+    public static void main(String[] args) {
+
+        int[] arr = {3, 5, 2, 3, 7, 2};
+
+        int min1 = arr[0];
+        int min2 = arr[1];
+
+        // Ensure min1 is smaller than min2 initially
+        if (min1 > min2) {
+            int temp = min1;
+            min1 = min2;
+            min2 = temp;
+        }
+
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] < min1) {
+                min2 = min1;
+                min1 = arr[i];
+            } else if (arr[i] < min2) {
+                min2 = arr[i];
+            }
+        }
+
+        int sum = min1 + min2;
+        System.out.println("Sum of least numbers: " + sum);
+    }
+}
+
