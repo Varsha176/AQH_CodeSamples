@@ -1,0 +1,58 @@
+Question 1 — Java: Find Frequent Words 
+Write a Java method: 
+List<String> findStopWords(String text, int k) 
+
+The method should return all words that appear at least k times in the input text. 
+
+Requirements: 
+
+Words should be returned in the order of their first appearance. Use appropriate Java collections to count word frequency. Preserve insertion order when returning results. 
+
+Example 
+
+Input: 
+
+text = "a b a c b a" 
+
+k = 2 
+
+ Output: 
+
+[a, b] 
+
+  **********************************************************************************************************************
+  // Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.List;
+class Main {
+    public static void main(String[] args)
+    {
+        String input = "a c a c b a";
+        System.out.println(findStopWords(input,2));
+    }
+    
+    public static List<String> findStopWords(String text, int k) 
+    {
+        String words [] = text.split("\\s+");
+        System.out.println("string splited");
+HashMap<String, Integer> hm = new HashMap<String, Integer>();
+    ArrayList<String> ts = new ArrayList<String>();
+    for(String s : words)
+    {
+        hm.put(s,hm.getOrDefault(s,0)+1);
+    }
+    System.out.println(hm);
+    for(Map.Entry<String,Integer> entry : hm.entrySet())
+    {
+        if(entry.getValue()>=2)
+        {
+            ts.add(entry.getKey());
+        }
+    }
+    return ts;
+    
+    }
+}
