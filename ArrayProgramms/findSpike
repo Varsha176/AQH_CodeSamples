@@ -1,0 +1,41 @@
+q: You are given an integer array representing recorded measurements. A value is considered a spike if it is at least three times greater than the maximum of all previous values. 
+op: Return the 0-based index of the first spike in the array. If no spike is found, return -1. 
+Example 
+metrics = [3, 10, 2, 7] 
+Output: 1 
+
+Explanation: Index 0 → value = 3 → initial maximum 
+Index 1 → value = 10 
+10 >= 3 * 3 = 9 → spike detected 
+
+*************************************************************************************************************************
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        int input [] = {3,4,14,7};
+        System.out.println(detectFirstAnomaly(input));
+        
+    }
+    
+    public static int detectFirstAnomaly(int[] input) 
+    {
+     int max =  input[0];
+     System.out.println("max element is"+max);
+     for(int i=1;i<input.length;i++)
+     {
+         if(input[i]>=3*max)
+         {
+             max = input[i];
+             return i;
+             
+         }
+         else
+         {
+             continue;
+         }
+     }
+     return -1;
+    }
+}
