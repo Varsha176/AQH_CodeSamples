@@ -1,0 +1,39 @@
+Q:You are given two arrays of strings, a and b, of equal length. For each index i: Compare a[i] and b[i]. Determine whether the two strings share at least one common substring. 
+Print: "YES" if the pair shares a common substring. "NO" otherwise. 
+Input 
+a = ["ab", "cd", "ef"] 
+b = ["af", "ee", "ef"] 
+
+Output :YES NO YES 
+*********************************************************************************************************************
+import java.util.HashSet;
+
+class Main {
+    public static void main(String[] args) {
+
+        String[] a = {"ab", "cd", "ef"};
+        String[] b = {"af", "ee", "ef"};
+
+        for (int i = 0; i < a.length; i++) {
+
+            HashSet<Character> set = new HashSet<>();
+
+            // Store characters of first string
+            for (char ch : a[i].toCharArray()) {
+                set.add(ch);
+            }
+
+            boolean found = false;
+
+            // Check characters of second string
+            for (char ch : b[i].toCharArray()) {
+                if (set.contains(ch)) {
+                    found = true;
+                    break;
+                }
+            }
+
+            System.out.println(found ? "YES" : "NO");
+        }
+    }
+}
