@@ -1,0 +1,31 @@
+q: WAP to segregate letter and digit from input string and store letter in uppercase
+Input: a1b2c33d
+op: letter = ABCD, digits = 1233
+***********************************************
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+       String input = "a1b2c3d4";
+       StringBuilder sb = new StringBuilder();
+       StringBuilder sk = new StringBuilder();
+       StringBuilder uk = new StringBuilder();
+       for(char ch:input.toCharArray())
+       {
+           if(Character.isLetter(ch))
+           {
+               sb.append(Character.toUpperCase(ch));
+               
+           }
+           if(Character.isDigit(ch))
+           {
+               sk.append(ch);
+           }
+       }
+       System.out.println("letters:"+sb);
+       System.out.println("digits:"+sk);
+       
+       }
+       
+    }
