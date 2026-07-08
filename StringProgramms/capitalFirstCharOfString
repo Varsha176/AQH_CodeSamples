@@ -1,0 +1,28 @@
+q: "hello world" op: "Hello World"
+
+  class Main {
+    public static void main(String[] args) {
+
+        String input = "hello world welcome to java";
+        StringBuilder result = new StringBuilder();
+
+        boolean capitalizeNext = true;
+
+        for (char ch : input.toCharArray()) {
+
+            if (Character.isLetter(ch) && capitalizeNext) {
+                result.append(Character.toUpperCase(ch));
+                capitalizeNext = false;
+            } else {
+                result.append(ch);
+            }
+
+            if (ch == ' ') {
+                capitalizeNext = true;
+            }
+        }
+
+        System.out.println(result);
+    }
+}
+  
