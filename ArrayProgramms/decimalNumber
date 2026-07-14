@@ -1,0 +1,52 @@
+Q_1: Find and sum all decimal numbers
+input = {1,2.1,3,4.2} op = 6.3
+
+  -------------------------------
+  package com.practice;
+
+public class findAndAddDecimalNumbers {
+	public static void main(String args[])
+	{
+		
+		double a [] = {1,2.1,3,4.2};
+		double sum =0;
+		for(int i=0;i<a.length;i++)
+		{
+			if(!(a[i]%1  == 0))
+			{
+				sum = (double) (sum +a[i]);
+			}
+		}
+		System.out.print("sum of decimal no is"+sum);
+	}
+}
+-----------------------------------------------------
+  Q_2: Find the sum of only decimal values after . for example : sum will be .6 
+    package com.practice;
+
+public class findAndAddDecimalNumbers {
+	public static void main(String args[])
+	{
+		
+		double a [] = {1,2.1,3,4.2};
+		double sum =0;
+		int integerSum=0;
+		int decimalSum =0;
+		for(int i=0;i<a.length;i++)
+		{
+			if(!(a[i]%1  == 0))
+			{
+				sum = (double) (sum +a[i]);
+				integerSum += (int) a[i];  
+				decimalSum += a[i] - (int)a[i];  
+			}
+		}
+		System.out.println("sum of only decimal no is: "+sum);
+		System.out.println("sum of values before decimal: "+integerSum);
+		System.out.println("sum of values after decimal: "+decimalSum);
+		
+		
+	}
+}
+
+
