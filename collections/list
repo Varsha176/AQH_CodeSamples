@@ -1,0 +1,21 @@
+Q:Given a list of integers, find out all the numbers starting with 1
+  -----------------------------------------------------------------
+  // Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+import java.util.stream.*;
+class Main {
+    public static void main(String[] args) {
+       List<Integer> al = Arrays.asList(10,15,20,11);
+       ArrayList<Integer> newlist = new ArrayList();
+       for(Integer i:al)
+       {
+           if(String.valueOf(i).startsWith("1"))
+           {
+               newlist.add(i);
+           }
+       }
+      System.out.println(newlist);
+       
+    }
+}
