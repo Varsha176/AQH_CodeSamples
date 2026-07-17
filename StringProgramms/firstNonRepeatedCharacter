@@ -1,0 +1,31 @@
+Problem: Find the first character in a string that doesn't repeat.
+
+Example: - Input: "aabbcdd" → Output: "c" - Input: "aabb" → Output: null
+_________________________________________________________________________________
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+class Main {
+    public static void main(String[] args) {
+        String input = "swiss";
+        System.out.println(firstNonRepeatingChar(input));
+    }
+
+    static char firstNonRepeatingChar(String input) {
+        Map<Character, Integer> countMap = new LinkedHashMap<>();
+
+        // Step 1: count frequency of each character
+        for (char c : input.toCharArray()) {
+            countMap.put(c, countMap.getOrDefault(c, 0) + 1);
+        }
+
+        // Step 2: find first character with count == 1
+        for (char c : input.toCharArray()) {
+            if (countMap.get(c) == 1) {
+                return c;
+            }
+        }
+
+        return '_'; // sentinel value if none found
+    }
+}
