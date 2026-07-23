@@ -1,0 +1,63 @@
+Q: count adjacent 1 as a pair either horizontal or vertical but not diagonal.
+input : 11000
+11010
+00100
+00011
+00011
+The adjacent pairs are:
+
+Horizontal:
+(0,0)-(0,1) = 1
+(1,0)-(1,1) = 1
+(3,3)-(3,4) = 1
+(4,3)-(4,4) = 1
+= 4
+Vertical:
+(0,0)-(1,0) = 1
+(0,1)-(1,1) = 1
+(3,3)-(4,3) = 1
+(3,4)-(4,4) = 1
+= 4
+
+Total = 8
+**************************************public class AdjacentOnes {
+
+    public static int countAdjacentOnes(int[][] grid) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int count = 0;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+
+                if (grid[i][j] == 1) {
+
+                    // Check right neighbor
+                    if (j + 1 < cols && grid[i][j + 1] == 1) {
+                        count++;
+                    }
+
+                    // Check bottom neighbor
+                    if (i + 1 < rows && grid[i + 1][j] == 1) {
+                        count++;
+                    }
+                }
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+
+        int[][] grid = {
+            {1,1,0,0,0},
+            {1,1,0,1,0},
+            {0,0,1,0,0},
+            {0,0,0,1,1},
+            {0,0,0,1,1}
+        };
+
+        System.out.println(countAdjacentOnes(grid)); // 8
+    }
+}***********************************
