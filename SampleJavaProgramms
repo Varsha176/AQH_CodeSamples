@@ -36,33 +36,26 @@ class HelloWorld {
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
 
-class HelloWorld {
-    
+    class Main {
     public static void main(String[] args) {
-        boolean prime=true;
-     int num =31;
-     for(int i=2;i<num;i++)
-     {
-         if(num%i==0)
-         {
-              
-             prime=false;
-             break;
-         }
-         else
-         {
-             
-             prime = true;
-         }
-     }
-     if(prime)
-     {
-         System.out.println("number is prime");
-     }
-     else
-     {
-          System.out.println("number is not prime");
-     }
+
+        int num = 130;
+        boolean isPrime = true;
+
+        if (num <= 1) {
+            isPrime = false;
+        } else {
+
+            for (int i = 2; i <= Math.sqrt(num); i++) {
+
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        System.out.println(isPrime);
     }
 }
 **************Prime number from 1 to n ***********
