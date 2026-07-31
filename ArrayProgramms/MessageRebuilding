@@ -1,0 +1,68 @@
+q: write a java code to return rebuilded message that has been split in string of an array. rules are : first part will always start with 'A' and last character of rebuild message will be 'Z'
+two strigs can only be merged when last character of first string and first character of last string is same and will print only once.
+
+ex: Ab, bZ : output : AbZ
+ex: ...../, A----., /---Z : op: A----..../---Z
+
+------------------------------------------------------------------
+Logic:Store every string in a HashMap
+| Key | Value    |
+| --- | -------- |
+| '.' | "...../" |
+| 'A' | "A----." |
+| '/' | "/---Z"  |
+Think it like dictionary
+2.Find the starting string
+3.Look at the last character
+4.Find the next string and Merge Them
+---------------------------------------------------------------------------
+import java.util.HashMap;
+import java.util.Map;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        String[] arr1 = {"bZ", "Ab"};
+        System.out.println(rebuildMessage(arr1));
+
+        String[] arr2 = {"...../", "A----.", "/---Z"};
+        System.out.println(rebuildMessage(arr2));
+    }
+
+    public static String rebuildMessage(String[] arr) {
+
+        Map<Character, String> map = new HashMap<>();
+
+        String current = null;
+
+        // Store strings in map and find the starting string
+        for (String s : arr) {
+            map.put(s.charAt(0), s);
+
+            if (s.charAt(0) == 'A') {
+                current = s;
+            }
+        }
+
+        if (current == null) {
+            return "Invalid Input";
+        }
+
+        while (current.charAt(current.length() - 1) != 'Z') {
+
+            char last = current.charAt(current.length() - 1);
+
+            String next = map.get(last);
+
+            if (next == null) {
+                return "Cannot rebuild";
+            }
+
+            // Merge without duplicating the common character
+            current = current + next.substring(1);
+        }
+
+        return current;
+    }
+}
