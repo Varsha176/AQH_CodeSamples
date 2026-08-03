@@ -1,2 +1,35 @@
 // Longest Substring without repeating characters using sliding window
 https://www.youtube.com/watch?v=GS9TyovoU4c
+Logic: use left and right pointer from zero
+add every character in hashmap with position
+when character repeats then inc left pointer to the fwd direction
+---------------------------------------------------
+import java.util.HashMap;
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+
+        if (s.length() == 0)
+            return 0;
+
+        HashMap<Character, Integer> hm = new HashMap<>();
+
+        int left = 0;
+        int maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+
+            char ch = s.charAt(right);
+
+            if (hm.containsKey(ch)) {
+                left = Math.max(left, hm.get(ch) + 1);
+            }
+
+            hm.put(ch, right);
+
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+}
