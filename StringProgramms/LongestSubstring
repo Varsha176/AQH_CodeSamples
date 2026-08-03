@@ -3,6 +3,7 @@ https://www.youtube.com/watch?v=GS9TyovoU4c
 Logic: use left and right pointer from zero
 add every character in hashmap with position
 when character repeats then inc left pointer to the fwd direction
+left = Math.max(left, hm.get(ch) + 1); --"Move the left pointer just after the previous occurrence of the duplicate character—but never move it backward."
 ---------------------------------------------------
 import java.util.HashMap;
 
