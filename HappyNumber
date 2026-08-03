@@ -1,0 +1,34 @@
+Q: A number is called happy if:
+Replace the number by the sum of the squares of its digits.
+Repeat the process.
+If you eventually reach 1, the number is happy.
+If you start repeating numbers (forming a cycle), it is not happy.
+
+Logic: Store every calculated number in a HashSet.
+If we see the same number again → cycle → return false.
+If number becomes 1 → return true.
+
+----------------------------------------------
+import java.util.HashSet;
+class Solution {
+    public boolean isHappy(int n) {
+        int rem = 0;
+        
+        HashSet<Integer> hs = new HashSet<Integer>();
+        while(n!=1 && !hs.contains(n))
+        {
+           
+            hs.add(n);
+            int sum =0;
+            while(n>0)
+        {
+            
+            rem = n%10;
+            sum = sum +rem*rem;
+            n = n/10;
+}
+        n= sum;
+        }
+      return n==1;  
+    }
+}
