@@ -1,0 +1,72 @@
+Q: Given two integers A and B, return a string which contains A letters "a" and B letters "b" with no three consecutive letters being the same.
+Logic : while there are characters remaining -> calculate whether I can add 'a', calculate whether I can add 'b'
+    
+    if I can add BOTH
+    {
+        choose the one with more remaining
+    }
+    
+    else if I can add 'a'
+    {
+        add 'a'
+    }
+    
+    else if I can add 'b'
+    {
+        add 'b'
+    }
+    
+}
+
+print result
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Code:
+class Main {
+    public static void main(String[] args) {
+
+        int a = 5;
+        int b = 3;
+
+        StringBuilder sb = new StringBuilder();
+
+        while (a > 0 || b > 0) {
+
+            boolean add_a =
+                    (a > 0) &&
+                    !(sb.length() >= 2 &&
+                      sb.charAt(sb.length() - 1) == 'a' &&
+                      sb.charAt(sb.length() - 2) == 'a');
+
+            boolean add_b =
+                    (b > 0) &&
+                    !(sb.length() >= 2 &&
+                      sb.charAt(sb.length() - 1) == 'b' &&
+                      sb.charAt(sb.length() - 2) == 'b');
+
+            if (add_a && add_b) {
+
+                if (a > b) {
+                    sb.append('a');
+                    a--;
+                } else {
+                    sb.append('b');
+                    b--;
+                }
+
+            } else if (add_a) {
+
+                sb.append('a');
+                a--;
+
+            } else if (add_b) {
+
+                sb.append('b');
+                b--;
+            }
+        }
+
+        System.out.print(sb.toString());
+    }
+}
