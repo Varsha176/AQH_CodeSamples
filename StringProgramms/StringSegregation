@@ -1,0 +1,35 @@
+Q: Move vowels to the left, consonants in the middle, special chars to the right
+
+--------------------------------------------------------------------
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        String text = "mynameis*abc&";
+        StringBuilder vowels = new StringBuilder();
+        StringBuilder cons = new StringBuilder();
+        StringBuilder special = new StringBuilder();
+        for(int i=0;i< text.length();i++)
+        {
+            if(text.charAt(i)=='a' || text.charAt(i)=='e' ||text.charAt(i)=='i' || text.charAt(i)=='o' || text.charAt(i)=='u')
+            {
+                vowels.append(text.charAt(i));
+            }
+            else if(Character.isLetter(text.charAt(i)))
+            {
+                cons.append(text.charAt(i));
+            }
+            else
+            {
+                special.append(text.charAt(i));
+            }
+        }
+
+        String result = vowels.toString()
+                + cons.toString()
+                + special.toString();
+
+        System.out.println(result);
+    }
+}
