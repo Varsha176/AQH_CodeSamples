@@ -1,0 +1,48 @@
+Q: Find 2nd most repeated character in a string;
+Logic : Find MAX
+    ↓
+Find maximum value LESS THAN MAX
+    ↓
+That's SECOND MAX
+-----------------------------------------------------------------------------
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.HashMap;
+import java.util.Map;
+class Main {
+    public static void main(String[] args) {
+        String input = "aabbrrra";
+        HashMap<Character,Integer> hm = new HashMap();
+        for(char ch : input.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+        }
+        System.out.println(hm);
+        int max = 0;
+        int secMax = 0;
+        char maxchar = ' ';
+        char secMaxChar = ' ';
+        for(Map.Entry<Character,Integer> x : hm.entrySet())
+        {
+            if(x.getValue() > max)
+            {
+                max = x.getValue();
+                maxchar = x.getKey();
+            }
+
+        }
+
+        for(Map.Entry<Character,Integer> y : hm.entrySet())
+        {
+            if(y.getValue() < max && y.getValue() > secMax)
+            {
+                secMax = y.getValue();
+                secMaxChar = y.getKey();
+            }
+        }
+        System.out.println("first max"+max+":"+maxchar);
+        System.out.println("second max"+secMax+":"+secMaxChar);
+
+
+    }
+}
