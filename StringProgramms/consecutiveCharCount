@@ -1,0 +1,24 @@
+Input:   String input = "abbcccddddab";
+op : a1b2c3d4a1b1;
+-------------------------------------------------------------
+  public class CharCount {
+    public static void main(String[] args) {
+        String input = "abbcccdddd";
+        StringBuilder result = new StringBuilder();
+
+        int count = 1; // count occurrences
+
+        for (int i = 0; i < input.length(); i++) {
+            // If next char is same, increase count
+            if (i < input.length() - 1 && input.charAt(i) == input.charAt(i + 1)) {
+                count++;
+            } else {
+                // Append character and its count
+                result.append(input.charAt(i)).append(count);
+                count = 1; // reset count
+            }
+        }
+
+        System.out.println("Output: " + result.toString());
+    }
+}
