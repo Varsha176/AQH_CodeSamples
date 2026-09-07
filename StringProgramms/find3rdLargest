@@ -1,0 +1,27 @@
+Input -- abc102675rts
+op -- 5
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String input = "abc102675rts";
+
+        TreeSet<Integer> set = new TreeSet<>(Collections.reverseOrder());
+
+        for (char ch : input.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                set.add(ch - '0');
+            }
+        }
+
+        if (set.size() >= 3) {
+            Iterator<Integer> it = set.iterator();
+            it.next(); // largest
+            it.next(); // second largest
+            System.out.println("Third largest distinct digit: " + it.next());
+        } else {
+            System.out.println("Less than 3 distinct digits.");
+        }
+    }
+}
