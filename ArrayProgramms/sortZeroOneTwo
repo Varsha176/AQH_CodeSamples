@@ -1,4 +1,6 @@
 Q: Sort an array of 0,1,2
+Dutch National Flag algorithm : low places 0s, mid scans the unknown region, and high places 2s. For 0 I swap with low and move both, for 1 I only move mid, and for 2 I swap with high and move only high because the new element at mid still needs to be processed.
+
 
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
