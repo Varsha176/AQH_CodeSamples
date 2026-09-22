@@ -1,0 +1,75 @@
+write a java program that identify passed, failed and flaky test cases and return list accordingly.
+for example : testRun("login","failed",1);
+testRun("login","failed",2);
+testRun("search","passed",1);
+testRun("add to cart","failed",1);
+testRun("add to cart","passed",2);
+
+output:
+pass: [search]
+fail: [login]
+flaky: [add to cart]
+
+------------------------------------------------------
+import java.util.*;
+
+public class TestResultAnalyzer {
+
+    static class TestRun {
+        String testName;
+        String status;
+        int runNumber;
+
+        TestRun(String testName, String status, int runNumber) {
+            this.testName = testName;
+            this.status = status;
+            this.runNumber = runNumber;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        List<TestRun> testRuns = Arrays.asList(
+                new TestRun("login", "failed", 1),
+                new TestRun("login", "failed", 2),
+                new TestRun("search", "passed", 1),
+                new TestRun("add to cart", "failed", 1),
+                new TestRun("add to cart", "passed", 2)
+        );
+
+        Map<String, Set<String>> testResults = new HashMap<>();
+
+        // Group status by test case
+        for (TestRun run : testRuns) {
+            testResults
+                    .computeIfAbsent(run.testName, k -> new HashSet<>())
+                    .add(run.status.toLowerCase());
+        }
+
+        List<String> passed = new ArrayList<>();
+        List<String> failed = new ArrayList<>();
+        List<String> flaky = new ArrayList<>();
+
+        // Classify each test
+        for (Map.Entry<String, Set<String>> entry : testResults.entrySet()) {
+
+            String testName = entry.getKey();
+            Set<String> statuses = entry.getValue();
+
+            if (statuses.contains("passed") && statuses.contains("failed")) {
+                flaky.add(testName);
+            } else if (statuses.contains("passed")) {
+                passed.add(testName);
+            } else if (statuses.contains("failed")) {
+                failed.add(testName);
+            }
+        }
+
+        System.out.println("pass: " + passed);
+        System.out.println("fail: " + failed);
+        System.out.println("flaky: " + flaky);
+    }
+}
+
+what is computeIfAbsent method?
+If this key does not already exist, create a value for it and put it in the map --Useful for Grouping
