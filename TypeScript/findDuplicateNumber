@@ -1,0 +1,35 @@
+function findMissing(arr: number[]): number[] {
+    const missing: number[] = [];
+
+    for (let i = arr[0]; i <= arr[arr.length - 1]; i++) {
+        if (!arr.includes(i)) {
+            missing.push(i);
+        }
+    }
+
+    return missing;
+}
+
+console.log(findMissing([1, 2, 4, 5, 7, 8, 9]));
+
+Q2. Find duplicate elements in an array
+Input: [1, 2, 3, 2, 4, 5, 1]
+
+function findDuplicates(arr: number[]): number[] {
+    const seen = new Set<number>();
+    const duplicates = new Set<number>();
+
+    for (const num of arr) {
+        if (seen.has(num)) {
+            duplicates.add(num);
+        } else {
+            seen.add(num);
+        }
+    }
+
+    return [...duplicates];
+}
+
+console.log(findDuplicates([1, 2, 3, 2, 4, 5, 1]));
+
+Q: 3
