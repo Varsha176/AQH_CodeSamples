@@ -1,0 +1,41 @@
+        String str = "babad";
+Longest Palindromic Substring: bab
+aba also valid answer
+----------------------------------
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+
+class Main {
+    public static void main(String[] args) {
+       String x = "babad";
+        String longest = "";
+        for(int i=0;i<x.length();i++)
+            {
+                for(int j=i+1;j<x.length();j++)
+                    {
+                        String sub = x.substring(i,j);
+                        if(checkSubstring(sub))
+                        {
+                            if(sub.length()>longest.length())
+                            {
+                                longest = sub;
+                            }
+                        }
+                        
+                    }
+                                        
+
+            }
+        System.out.println(longest);
+    }
+    public static boolean checkSubstring(String x)
+    {
+        int left =0;
+        int right = x.length()-1;
+        if(x.charAt(left)!=x.charAt(right))
+        {
+            return false;
+        }
+        return true;
+    }
+}
